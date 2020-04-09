@@ -3,7 +3,7 @@
 ### Table of Contents
 - [Git Workflow](#git-workflow)
 - [Create branch](#create-branch)
-- [Other commands]("#other-commands)
+- [Other useful commands](#other-useful-commands)
 ---
 Note : Ignore keys {}.
 ---
