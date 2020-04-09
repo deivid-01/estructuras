@@ -75,9 +75,9 @@ Send files to remote  repository.
 ---
 ## Other useful commands:
  ```javascript
-    git status //See on which status are files
+    git status //See files status
     git pull // Bring files from Github to local
-    git diff <file> //See diffrences between files
+    git diff <file> //See differences between files
     git branch // See existing branchs
     git config -- global user.email "email"//Configurate email user
      git config -- global user.name "nombre" //Configurate email name
