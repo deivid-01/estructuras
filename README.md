@@ -1,4 +1,5 @@
 # Estructuras
+<<<<<<< HEAD
 ---
 ### Table of Contents
 - [Basic Commands](#basic-commands)
