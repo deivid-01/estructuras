@@ -21,7 +21,7 @@ Note : Ignore keys {}.
  ```javascript
     git add <file>
 ```
-- Send all files : there is two ways, both does the same thing
+- Send all files : there are two ways, both do the same thing
 
  ```javascript
     //One option
@@ -30,7 +30,7 @@ Note : Ignore keys {}.
     git add -A
 ```
 ### Step 3 : Local Repository
-- Send files to local repository. Inside of "short description", put a short description about the new changes that you've make.
+- Send files to a local repository. Inside of "short description", put a short description of the new changes that you've made.
  ```javascript
     git commit -m "short description"
 ```
