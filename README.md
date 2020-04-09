@@ -5,13 +5,18 @@
 - [Create branch](#create-branch)
 - [Other commands]("#other-commands)
 ---
+Note : Ignore keys {}.
+---
 ##  Git Workflow
+
+![Proyect Image](https://res.cloudinary.com/practicaldev/image/fetch/s--M_fHUEqA--/c_limit%2Cf_auto%2Cfl_progressive%2Cq_auto%2Cw_880/https://thepracticaldev.s3.amazonaws.com/i/128hsgntnsu9bww0y8sz.png)
+
 ### Step 1 : Working Directory
 - Hey Git, I'm going to use this documents with you, ok?
  ```javascript
     git init
 ```
-### Step 3 : Staging  Area
+### Step 2 : Staging  Area
 - Send file to staging Area
  ```javascript
     git add <file>
@@ -33,7 +38,7 @@
 Send files to remote  repository. 
 - New Repository: 
  ```javascript
-   git remote add origin { link reposoritoy}
+   git remote add origin { link repository}
    git push -u origin master
 ```
 - Existing Repository:
@@ -42,12 +47,12 @@ Send files to remote  repository.
 ```
 ---
 ## Create Branch
-Note : Ignore keys {}.
+
 - Step 1 : Clone repository
  ```javascript
     git clone https://github.com/DeividT01/estructuras.git
 ```
-- Step 2 : Go to GitBash and move to clone repository
+- Step 2 : Go to Git Bash and move to clone repository
  ```javascript
     cd estructuras
 ```
