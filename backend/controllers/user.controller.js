@@ -1,6 +1,8 @@
 
 //user.controller.js-> funciones de cada ruta
 const User = require('../models/users');
+const userLogin =require('../controllers/userlogin.controller')
+
 const userCtrl = {};
 
 userCtrl.GetUsers=async(req,res)=>{
@@ -12,6 +14,15 @@ userCtrl.GetUsers=async(req,res)=>{
 };
 userCtrl.CreateUser= async (req,res)=> {
     const user = new User(req.body);
+    var dataUserLogin={}
+    dataUserLogin.id=user.id;
+    dataUserLogin.nickname=user.nickname;
+    dataUserLogin.password=user.password;
+    
+    
+    userLogin.CreateUser(dataUserLogin);
+    
+
     await user.save();
     res.json({
         'status':'user saved'
@@ -35,6 +46,10 @@ userCtrl.EditUser= async(req,res) => {
 userCtrl.DeleteUser= async(req,res)=>{
     await User.findByIdAndRemove(req.params.id)
     res.json({'status':'user deleted'});
+}
+userCtrl.DeleteAll=async(req,res)=>{
+    await User.deleteMany({'__v':0})
+    res.json({'status':'All users deleted'})
 }
 
 module.exports = userCtrl;

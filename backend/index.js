@@ -2,6 +2,7 @@
 //#region Libraries
 const express= require('express');
 const morgan = require('morgan'); //No es necesario, pero ayuda a ver por consola lo que el usuario pide
+const cors = require('cors');
 const app= express();//Funcionalidad del servidor
 const { mongoose } = require('./database'); //Voy a database y solicito la conexion(mongoose)
 
@@ -16,11 +17,12 @@ app.set('port',3000,process.env.PORT||3000)//variable para acceder desde cualqui
 //#region Middlewares
 app.use(morgan('dev'));
 app.use(express.json());//Para entender el formato json que le envien
-
+app.use(cors({origin:'htpp://localhost:4200'}));
 //#endregion
 
 //#region Routes
 app.use('/api/users/',require('./routes/users.routes'));
+app.use('/api/login/',require('./routes/userslogin.routes'));
 //#endregion
 
 //#region Starting Servidor

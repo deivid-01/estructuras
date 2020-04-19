@@ -4,7 +4,9 @@ const{ Schema } =mongoose;
 
 const userSchema=new Schema({
     name:{type:String, required: true},
-    estatura:{type:Number,required:true}  
+    nickname: {type:String,required:true},
+    password: {type:String,required:true},
+    estatura: {type:Number,required:true}  
     /*
     peso:{type:Number,required:true},
     sexo:{type:String,required:true},
