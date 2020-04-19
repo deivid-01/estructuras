@@ -1,24 +1,28 @@
 //routes.js -> las rutas para los protocolos http
 const express = require('express');
 const router = express.Router();
-const user=require ('../controllers/user.controller');
-const userLogin =require('../controllers/userlogin.controller')
-
+const user =require('../controllers/users.controller')
+const {isAuthenticated}= require('../helpers/validatePages')
 //router.get('/login')
 
-router.get('/', user.GetUsers); //Get
+router.get('/signup', user.RenderSignUpForm); //Get
 
-router.post('/',user.CreateUser);//Save
+router.post('/signup',user.SignUp);
 
-router.get('/:id',user.GetUser); //Get
+router.get('/signin', user.RenderSignInForm); //Get
 
-router.put('/:id',user.EditUser);//Update
+router.post('/signin',user.SignIn);
 
-router.delete('/:id',user.DeleteUser);
+router.get('/logout',user.Logout);
 
-router.delete('/',user.DeleteAll);
+router.get('/home',isAuthenticated,user.Home);
 
+router.get('/home/misdatos',isAuthenticated,user.GetData);
 
+router.put('/home/misdatos',isAuthenticated,user.EditData);
 
+router.delete('/home/misdatos',isAuthenticated,user.Delete);
 module.exports = router;
-//5e9b5cef60462c1e74e1b461
+/*passport.authenticate('local',{
+    failureRedirect:'api/users/signin',
+    successRedirect: 'api/users'*/

@@ -2,6 +2,7 @@
 
 # compiled output
 /node_modules
+/frontend/node_modules
 /.vscode
 /dist
 /tmp
