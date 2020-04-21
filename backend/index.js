@@ -19,7 +19,7 @@ require('./config/passport');
 //#region Middlewares
 app.use(morgan('dev'));
 app.use(express.json());//Para entender el formato json que le envien
-app.use(cors({origin:'htpp://localhost:4200'}));
+app.use(cors({origin:'htpp://localhost:4200/'}));
 app.use(session({
   secret: 'secret',
   resave: true,

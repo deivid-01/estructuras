@@ -1,24 +1,39 @@
+<div class="container">
 <div class="row">
     <div class="col-md-6 mx-auto mt-5">
-        <div class="car">
-            <div class="car-body">
+        <div class="card">
+            <div class="card-content">
                 <h1 class= "text-center">REGISTRO</h1>
-                <form>
-                    <div class="form-group">
+                <form #userForm="ngForm" (ngSubmit)="addUser(userForm)">
+                    <div class="row">
                         <label for="nombreCompleto">Nombre completo</label>
-                        <input type="text" name="nombreCompleto" id="usuario" class="form-control">
+                        <input type="text" name="nombreC" #nombreC="ngModel" [(ngModel)]="usersService.selectedUser.nombreC"
+                        class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="row">
                         <label for="usuario">Nombre de usuario</label>
-                        <input type="usuario" name="usuario" id="usuario" class="form-control">
+                        <input type="text" name="usuario" #usuario="ngModel" [(ngModel)]="usersService.selectedUser.usuario"
+                        class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="row">
                         <label for="estatura">Estatura</label>
-                        <input type="number" name="estatura" id="estatura" class="form-control">
+                        <input type="text" name="estatura" #estatura="ngModel" [(ngModel)]="usersService.selectedUser.estatura" 
+                        class="form-control">
                     </div>
-                    <div class="form-group">
+                    <div class="row">
                         <label for="Peso">Peso</label>
-                        <input type="number" name="Peso" id="peso" class="form-control">
+                        <input type="text" name="peso" #peso="ngModel" [(ngModel)]="usersService.selectedUser.peso"
+                         class="form-control">
+                    </div>
+                    <div class="row">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="text" name="contrasena"  #contrasena="ngModel" [(ngModel)]="usersService.selectedUser.contrasena"
+                         class="form-control">
+                    </div>
+                    <div class="row">
+                        <label for="correo">Correo Electrónico</label>
+                        <input type="text" name="correo"  #correo="ngModel" [(ngModel)]="usersService.selectedUser.correo"
+                         class="form-control">
                     </div>
                     <div class="form-group">
                         <label for="Género">Género:</label>
@@ -36,18 +51,11 @@
                         <input type="radio" id="intensa" name="actividad" value="intensa">
                         <label for="intensa"> Intensa</label><br>
                     </div>
-                    <div class="form-group">
-                        <label for="contraseña">Contraseña</label>
-                        <input type="password" name="contraseña" id="contraseña" class="form-control">
-                    </div>
-                    <div class="form-group">
-                        <label for="Correo">Correo Electrónico</label>
-                        <input type="correo" name="correo" id="correo" class="form-control">
-                    </div>
+                    
                     <input type="submit" value="SIGUIENTE" class="btn btn-primary btn-block btn-lg">
                 </form>
             </div>
         </div>
     </div>
 </div>
-
+</div>
