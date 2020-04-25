@@ -27,9 +27,20 @@ export class RegisterPageComponent implements OnInit {
 
   addUser(form: NgForm){
     
-        console.log(form.value);
-    
+    console.log(form.value);
+    //Validar formulario :Espacios vacios, el correo tenga arroba, etc
+    //
+    //Si al validar faltan datos: solicitarlos al usuario
+
+    //#region Si al validar están todos los datos ahí si hacer lo que está aquí abajo     
+        this.usersService.postUser(form.value)
+          .subscribe(res=>{
+            console.log(res)
+          });
 
       }
+      //Si la respuesta es 'User Saved', redireccionar al login
+      //Si la respuesta es 'The email is already in use', pedir que cambie el correo
+      //#endregion  
   
 }

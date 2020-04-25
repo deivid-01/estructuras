@@ -18,11 +18,11 @@ export class UsersService {
 
 
   getUser(){
-    return this.http.get(this.URL_API);
+    return this.http.get(this.URL_API+'/${user.id}');
   }
 
   postUser(User: User){
-    return this.http.post(this.URL_API, User);
+    return this.http.post(this.URL_API+'/signup', User);
   }
 
   putUser(user: User){

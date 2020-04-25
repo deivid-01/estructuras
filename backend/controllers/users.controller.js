@@ -10,8 +10,9 @@ userCtrl.RenderSignUpForm = (req,res) => {
 }
 userCtrl.SignUp = async (req,res) => {
   
-  
-    const emailUser =  await User.findOne({email:req.body.email});
+    
+    
+    const emailUser =  await User.findOne({email:req.body.email})
     
     if(emailUser){
        res.json({
@@ -28,6 +29,7 @@ userCtrl.SignUp = async (req,res) => {
     res.json({
         'status':'User saved'
     })
+
    } 
   
 }

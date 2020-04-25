@@ -1,21 +1,27 @@
 export class User {
 
-    constructor(id='', nombreC = '', usuario='', estatura='', peso='', contrasena='', correo=''){
+    constructor(id='', name = '', nickname='', estatura='', peso='', password='', email='',genero='',actividadFisica=''){
         this.id= id;
-        this.nombreC= nombreC;
-        this.usuario= usuario;
+        this.name= name;
+        this.nickname= nickname;
         this.estatura=  estatura;
         this.peso= peso;
-        this.contrasena= contrasena;
-        this.correo= correo;
+        this.password= password;
+        this.email= email;
+        this.genero = genero;
+        this.actividadFisica = actividadFisica;
+
+        
 
 
     }
     id: String;
-    nombreC: String;
-    usuario: String;
+    name: String;
+    nickname: String;
     estatura: String;
     peso: String;
-    contrasena: String;
-    correo: String; 
+    password: String;
+    email: String; 
+    genero:String;
+    actividadFisica:String;
 }
