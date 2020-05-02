@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UsersService } from 'src/app/services/users.service';
-import { NgForm } from '@angular/forms';
+import { NgForm, ControlContainer } from '@angular/forms';
 import { User } from 'src/app/models/user';
 
 @Component({
@@ -25,9 +25,19 @@ export class RegisterPageComponent implements OnInit {
 
   }
 
+  login(){
+    window.location.href="http://localhost:4200/login";
+  }
+
   addUser(form: NgForm){
     
     console.log(form.value);
+    if(!form.value.genero){
+     alert("Debes de llenar la información sobre tu género"); 
+    }
+    if(!form.value.actividad){
+      alert("Debes llenar la información sobre tu actividad");
+    }
     //Validar formulario :Espacios vacios, el correo tenga arroba, etc
     //
     //Si al validar faltan datos: solicitarlos al usuario
