@@ -21,7 +21,10 @@ export class LoginPageComponent implements OnInit {
   ngOnInit(): void {
   }
 
+login(form:NgForm)
+{
 
+}
   
   
  loginUser(form: NgForm){
@@ -31,17 +34,32 @@ export class LoginPageComponent implements OnInit {
     //Validar formulario :Espacios vacios, el correo tenga arroba, etc
     //
     //Si al validar faltan datos: solicitarlos al usuario
-    if(!form.value.nickname || !form.value.password ){
+    if(!form.value.email || !form.value.password ){
       alert("Recuerda que debes llenar toda la información");  
       window.location.href="http://localhost:4200/login";
     //#region Si al validar están todos los datos ahí si hacer lo que está aquí abajo     
-        this.usersService.postUser(form.value)
-          .subscribe(res=>{
-            console.log(res)
-          });
+        
 
       } else{
-        window.location.href="http://localhost:4200/home";
+        this.usersService.postUserSignin(form.value)
+          .subscribe(res=>{
+            //console.log(res)
+             var response=JSON.parse(JSON.stringify(res));
+             console.log(response);
+            if(response.status=='in')
+            {
+              window.location.href="http://localhost:4200/home";
+            }
+            else{
+
+              alert("Nombre o contraseña incorrectos");
+            }
+
+            
+          });
+        
+        //
+      
       }
       //Si la respuesta es 'User Saved', redireccionar al login
       //Si la respuesta es 'The email is already in use', pedir que cambie el correo

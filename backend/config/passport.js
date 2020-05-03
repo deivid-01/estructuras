@@ -9,7 +9,7 @@ passport.use(new localStrategy({
 }, async (email,password,done)=> {
 
     // Match Email's User
-   
+        console.log(email);
         const userFound=  await User.findOne({email})
         
         if(!userFound){

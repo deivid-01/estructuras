@@ -64,7 +64,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Actividad">Actividad Física:</label>
-                        <p></p><input type="radio" id="nula" name="actividad" [(ngModel)]="usersService.selectedUser.actividadFisica" value="nula">
+                        <p></p><input type="radio" id="nula" name="actividadFisica" [(ngModel)]="usersService.selectedUser.actividadFisica" value="nula">
                         <label for="nula"> Nula</label><br>
                         <input type="radio" id="regular" name="actividad" [(ngModel)]="usersService.selectedUser.actividadFisica" value="regular">
                         <label for="regular"> Regular</label><br>
@@ -72,7 +72,7 @@
                         <label for="intensa"> Intensa</label><br>
                     </div>
                     
-                    <input type="submit" value="SIGUIENTE" class="btn btn-primary btn-block btn-lg" (click)="login()">
+                    <input type="submit" value="SIGUIENTE" class="btn btn-primary btn-block btn-lg" >
                 </form>
             </div>
         </div>

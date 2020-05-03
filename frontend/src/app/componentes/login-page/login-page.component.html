@@ -7,11 +7,11 @@
                 <form #loginForm ="ngForm" (ngSubmit)=loginUser(loginForm) >
                     <div class="row">
                         <label for="usuario">Usuario</label>
-                        <input id="nickname" type="text" name="nickname" #nickname="ngModel" required [(ngModel)]="usersService.selectedUser.nickname"
+                        <input id="email" type="text" name="email" #email="ngModel" required [(ngModel)]="usersService.selectedUser.email"
                         class="form-control" >         
                     </div>
-                    <div *ngIf="nickname.invalid && (nickname.dirty || nickname.touched)" class="alert alert-danger">
-                    <div *ngIf="nickname.errors.required">El usuario es requerido. </div>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.required">El usuario es requerido. </div>
                     </div>
                     <div class="row">
                         <label for="contraseña">Contraseña</label>

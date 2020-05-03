@@ -26,6 +26,7 @@ userCtrl.SignUp = async (req,res) => {
     
      newUser.password = await newUser.encryptPassword(newUser.password) 
     await newUser.save();
+    console.log("Si lo guardo");
     res.json({
         'status':'User saved'
     })
@@ -35,8 +36,9 @@ userCtrl.SignUp = async (req,res) => {
 }
 
 userCtrl.RenderSignInForm = (req,res) => {
+    
     res.json({
-        'status':'Singin Window'
+        'status':'out'
     });
 }
 userCtrl.SignIn = passport.authenticate("local",{
@@ -53,8 +55,8 @@ userCtrl.Logout = (req,res) => {
 }
 userCtrl.Home = (req,res)=> {
     res.json({
-        'status':'Homepage'
-    })
+        'status':'in'
+    });
 }
 
 userCtrl.GetData = (req,res)=>{

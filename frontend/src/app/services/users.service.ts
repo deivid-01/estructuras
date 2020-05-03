@@ -23,12 +23,12 @@ export class UsersService {
     return this.http.get(this.URL_API+'/${user.id}');
   }
 
-  postUser(User: User){
+  postUserSignUp(User: User){
     return this.http.post(this.URL_API+'/signup', User);
   }
 
-  putUser(user: User){
-    return this.http.put(this.URL_API + '/${user.id}', user);
+ postUserSignin(User: User){
+    return this.http.post(this.URL_API + '/signin', User);
 
   }
 

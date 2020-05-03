@@ -24,12 +24,17 @@ export class RegisterPageComponent implements OnInit {
   }
 
   }
+  login(){
 
+    console.log("que es esto");
+  }
+    
+  
 
 
   addUser(form: NgForm){
     
-    console.log(form.value);
+    
     
     //Validar formulario :Espacios vacios, el correo tenga arroba, etc
     //
@@ -38,12 +43,16 @@ export class RegisterPageComponent implements OnInit {
       alert("Recuerda que debes llenar toda la información");  
       window.location.href="http://localhost:4200/register";
     //#region Si al validar están todos los datos ahí si hacer lo que está aquí abajo     
-        this.usersService.postUser(form.value)
+        
+    
+
+      }else{
+        console.log(form.value);
+        
+        this.usersService.postUserSignUp(form.value)
           .subscribe(res=>{
             console.log(res)
           });
-
-      }else{
         window.location.href="http://localhost:4200/login";
         
  }

@@ -10,7 +10,7 @@ const userSchema = new Schema({
     estatura: {type:Number,required:true}, 
     peso: {type:Number,required:true},
     genero: {type:String,required:true},
-    actividadFisica: {type:Number,required:true},
+    actividadFisica: {type:String,required:true},
 })
 
 
