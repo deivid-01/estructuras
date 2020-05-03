@@ -6,18 +6,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  page: boolean = false;
-  islogin: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
   }
-
-  /*ogged(sw: boolean){
-    this.logged = sw;
-    console.log(sw);
-  }*/
-  
 
 }
