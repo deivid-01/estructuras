@@ -25,32 +25,31 @@ export class RegisterPageComponent implements OnInit {
 
   }
 
-  login(){
-    window.location.href="http://localhost:4200/login";
-  }
+
 
   addUser(form: NgForm){
     
     console.log(form.value);
-    if(!form.value.genero){
-     alert("Debes de llenar la información sobre tu género"); 
-    }
-    if(!form.value.actividad){
-      alert("Debes llenar la información sobre tu actividad");
-    }
+    
     //Validar formulario :Espacios vacios, el correo tenga arroba, etc
     //
     //Si al validar faltan datos: solicitarlos al usuario
-
+    if(!form.value.name || !form.value.nickname || !form.value.estatura || !form.value.peso || !form.value.password || !form.value.email || !form.value.genero || !form.value.actividad){
+      alert("Recuerda que debes llenar toda la información");  
+      window.location.href="http://localhost:4200/register";
     //#region Si al validar están todos los datos ahí si hacer lo que está aquí abajo     
         this.usersService.postUser(form.value)
           .subscribe(res=>{
             console.log(res)
           });
 
-      }
+      }else{
+        window.location.href="http://localhost:4200/login";
+        
+ }
       //Si la respuesta es 'User Saved', redireccionar al login
       //Si la respuesta es 'The email is already in use', pedir que cambie el correo
       //#endregion  
-  
+    
+    }
 }
