@@ -11,8 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./home-page.component.css']
 })
 export class HomePageComponent implements OnInit {
-
-  usName: string = "Nombre Usuario";
+  
 
   constructor(public usersService: UsersService, public router: Router) { }
 
@@ -24,7 +23,19 @@ export class HomePageComponent implements OnInit {
 
   getUser()
   {
+    
     const  user=JSON.parse(localStorage.getItem('user'));
+   
     //obtener una variable especifica -> user.name
   }
+  
+  setName(nombre)
+  {
+    const  user=JSON.parse(localStorage.getItem('user'));
+    user.name=nombre;
+    localStorage.setItem('user');
+
+  }
+
+
 }

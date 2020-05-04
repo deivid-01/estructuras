@@ -46,26 +46,28 @@ export class LoginPageComponent implements OnInit {
         
 
       } else{
-        this.usersService.postUserSignin(form.value)
-          .subscribe(res=>{
-         
-            // var response=JSON.parse(JSON.stringify(res));
-             
-            if(res!=null)
-            {
+
+        
+        const user={'name':'juanito','age':13};
+        localStorage.setItem('user',JSON.stringify(user));
+        //this.usersService.postUserSignin(form.value)
+          //.subscribe(res=>{              
+            //if(res!=null)
+           // {
               //UsersService.selectedUser = res as User;
               //this.usersService.selectedUser= res as User;  
-              localStorage.setItem('user',JSON.stringify(res))  
+              //localStorage.setItem('user',JSON.stringify(res))  
               //console.log(UsersService.selectedUser.nickname);     
-              window.location.href="http://localhost:4200/home";
-            }
+        window.location.href="http://localhost:4200/home";
+            
+            /*
             else{
 
               alert("Nombre o contraseña incorrectos");
-            }
+            }*/
 
             
-          });
+       //  });
         
         //
       
