@@ -41,10 +41,35 @@ userCtrl.RenderSignInForm = (req,res) => {
         'status':'out'
     });
 }
-userCtrl.SignIn = passport.authenticate("local",{
-    failureRedirect:"/api/signin",
-    successRedirect: "/api/home"
-});
+userCtrl.SignIn  = async (req,res)=>{
+    //passport.authenticate("local");
+    console.log(req.body)
+
+    const userFound=   await User.findOne({email:req.body.email})
+    
+    if(!userFound){
+       res.json({
+           'message':'out'
+       })
+
+   }
+   else {
+        const match = await userFound.matchPassword(req.body.password)
+        console.log("match "+match);
+        if(match){
+            res.json(userFound);
+        }
+        else{
+            res.json(null);
+
+        }
+   
+
+   } 
+  
+
+
+ }
 
 userCtrl.Logout = (req,res) => {
     req.logout();
@@ -54,8 +79,10 @@ userCtrl.Logout = (req,res) => {
     res.redirect('/api/users/signin')
 }
 userCtrl.Home = (req,res)=> {
+    console.log("qwe");
+   
     res.json({
-        'status':'in'
+        'status':'olaaaaa'
     });
 }
 

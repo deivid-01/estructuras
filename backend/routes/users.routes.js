@@ -15,7 +15,7 @@ router.post('/signin',user.SignIn);
 
 router.get('/logout',user.Logout);
 
-router.get('/home',isAuthenticated,user.Home);
+router.get('/home',user.Home);
 
 router.get('/home/misdatos',isAuthenticated,user.GetData);
 

@@ -3,6 +3,8 @@ import { UsersService } from '../../services/users.service';
 import {Router} from '@angular/router';
 import { NgForm } from '@angular/forms';
 import { User } from 'src/app/models/user';
+import { HomePageComponent } from '../home-page/home-page.component';
+
 
 @Component({
   selector: 'app-login-page',
@@ -15,21 +17,24 @@ export class LoginPageComponent implements OnInit {
   public nickname: string;
   public password: string;
 
+  public user:User;
 
-  constructor(public usersService: UsersService, public router: Router) { }
+
+  constructor (public usersService: UsersService, public router: Router) {
+ 
+   }
+
+   
 
   ngOnInit(): void {
+   localStorage.clear();
+    
   }
 
-login(form:NgForm)
-{
 
-}
-  
-  
  loginUser(form: NgForm){
     
-    console.log(form.value);
+   
     
     //Validar formulario :Espacios vacios, el correo tenga arroba, etc
     //
@@ -43,11 +48,15 @@ login(form:NgForm)
       } else{
         this.usersService.postUserSignin(form.value)
           .subscribe(res=>{
-            //console.log(res)
-             var response=JSON.parse(JSON.stringify(res));
-             console.log(response);
-            if(response.status=='in')
+         
+            // var response=JSON.parse(JSON.stringify(res));
+             
+            if(res!=null)
             {
+              //UsersService.selectedUser = res as User;
+              //this.usersService.selectedUser= res as User;  
+              localStorage.setItem('user',JSON.stringify(res))  
+              //console.log(UsersService.selectedUser.nickname);     
               window.location.href="http://localhost:4200/home";
             }
             else{

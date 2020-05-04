@@ -10,7 +10,7 @@ import { LoginPageComponent} from '../componentes/login-page/login-page.componen
 export class UsersService {
   [x: string]: any;
 
-  selectedUser: User;
+  public   selectedUser: User;
   users: User[];
   readonly URL_API ='http://localhost:3000/api';
 

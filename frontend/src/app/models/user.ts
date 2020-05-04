@@ -24,4 +24,10 @@ export class User {
     email: String; 
     genero:String;
     actividadFisica:String;
+
+     GetUser()
+     {
+        console.log("vas bien");
+
+    }
 }
