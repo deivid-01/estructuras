@@ -1,0 +1,32 @@
+<div class="container">
+<div class="row">
+    <div class="col-md-6 mx-auto mt-5">
+        <div class="card">
+            <div class="card-content">
+                <h1 class= "text-center">INGRESO</h1>
+                <form #loginForm ="ngForm" (ngSubmit)=loginUser(loginForm) >
+                    <div class="row">
+                        <label for="usuario">Usuario</label>
+                        <input id="email" type="text" name="email" #email="ngModel" required [(ngModel)]="usersService.selectedUser.email"
+                        class="form-control" >         
+                    </div>
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert alert-danger">
+                    <div *ngIf="email.errors.required">El usuario es requerido. </div>
+                    </div>
+                    <div class="row">
+                        <label for="contraseña">Contraseña</label>
+                        <input id="nickname" type="password" name="password" #password="ngModel"  required [(ngModel)]="usersService.selectedUser.password"
+                        class="form-control">  
+                    </div>
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert alert-danger">
+                    <div *ngIf="password.errors.required">La contraseña es requerida. </div>
+                    </div>
+                    <p></p>
+                    <p></p>
+                    <input type="submit" value="INGRESAR" class="btn btn-primary btn-block btn-lg">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>

@@ -1,0 +1,28 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+  <a class="navbar-brand" href="#" routerLink="/home" *ngIf ='logIn()'>Nutrición</a>
+  <a class="navbar-brand" href="#" *ngIf ='!logIn()'>HealthCare</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarColor01">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+      </li>
+    </ul>
+    <ul class="navbar-nav form-inline my-2 my-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/register" *ngIf ='!logIn()' >Registro</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#" routerLink="/login" *ngIf ='!logIn()'>Ingreso</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link Text" href="#" routerLink="/user" *ngIf ='logIn()'>Mi Perfil</a>
+      </li>
+      <li class="nav-item">
+        <a (click)="onClickMe()" class="nav-link Text" routerLink="/login" href="#"  *ngIf ='logIn()'>Salir</a>
+      </li>
+    </ul>
+  </div>
+</nav>

@@ -1,0 +1,58 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mx-auto mt-5">
+            <div class="card">
+                
+                <div class="card-content">
+                    <h1 class="text-center">{{usName}}</h1>
+                    <div class="form-group">
+                        <h5>
+                            Nombre completo:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" required  [(ngModel)]="fullName">
+                        </h5>
+                    </div>
+                    <div class="form-group">
+                        <h5>
+                            Nombre de usuario:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="usName">
+                        </h5>
+                    </div>
+                    <div class="form-group">
+                        <h5>
+                            Estatura:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="height">
+                        </h5>
+                    </div>
+                    <div class="form-group">
+                        <h5>
+                            Peso:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="weight">
+                        </h5>
+                    </div>
+                    <div class="form-group">
+                        <h5>
+                            Correo electrónico:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="email">
+                        </h5>
+                    </div>
+                    <div class="form-group">
+                        <h5>
+                            Genero:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="gender">
+                        </h5>
+                    </div>
+                    <div class="form-group">
+                        <h5>
+                            Actividad Física:
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="activity">
+                        </h5>
+                    </div>
+                    <div>                      
+                        <input type="submit" value="Guardar" class="btn btn-primary btn-block btn-lg" routerLink="/user" (click)="setUser()">
+                        <input type="submit" value="Cancelar" class="btn btn-primary btn-block btn-lg" routerLink="/user" >
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
