@@ -1,7 +1,7 @@
 export class User {
 
-    constructor(id='', name = '', nickname='', estatura=0, peso=0, password='', email='',genero='',actividadFisica=''){
-        this.id= id;
+    constructor(_id='', name = '', nickname='', estatura=0, peso=0, password='', email='',genero='',actividadFisica=''){
+        this._id= _id;
         this.name= name;
         this.nickname= nickname;
         this.estatura=  0;
@@ -10,12 +10,12 @@ export class User {
         this.email= email;
         this.genero = genero;
         this.actividadFisica = actividadFisica;
-
+    }
         
 
 
-    }
-    id: String;
+    
+    _id: String;
     name: String;
     nickname: String;
     estatura: Number;
@@ -25,9 +25,5 @@ export class User {
     genero:String;
     actividadFisica:String;
 
-     GetUser()
-     {
-        console.log("vas bien");
-
-    }
+    
 }

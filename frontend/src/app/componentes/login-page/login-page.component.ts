@@ -45,45 +45,25 @@ export class LoginPageComponent implements OnInit {
     //#region Si al validar están todos los datos ahí si hacer lo que está aquí abajo     
         
 
-      } else{
+      } 
+      else{
 
-        
-        const user={
-          'nickname': 'Pipe77',
-          'email': 'felipe22@gmail.com',
-          'password': '22407',
-          'name': 'felipe',
-          'estatura': 1.82,
-           'peso': 72,
-          'genero': 'Masculino',
-          'actividadFisica': 'Regular'};
-        localStorage.setItem('user',JSON.stringify(user));
-        //this.usersService.postUserSignin(form.value)
-          //.subscribe(res=>{              
-            //if(res!=null)
-           // {
-              //UsersService.selectedUser = res as User;
-              //this.usersService.selectedUser= res as User;  
-              //localStorage.setItem('user',JSON.stringify(res))  
-              //console.log(UsersService.selectedUser.nickname);     
-        window.location.href="http://localhost:4200/home";
-            
-            /*
+        this.usersService.postUserSignin(form.value)
+          .subscribe(res=>{              
+            if(res!=null)
+           { 
+           
+            localStorage.setItem('user',JSON.stringify(res))    
+            window.location.href="http://localhost:4200/home";
+           }
             else{
-
               alert("Nombre o contraseña incorrectos");
-            }*/
-
-            
-       //  });
-        
-        //
-      
+            }
+          });
       }
-      //Si la respuesta es 'User Saved', redireccionar al login
-      //Si la respuesta es 'The email is already in use', pedir que cambie el correo
-      //#endregion  
- }
+
+
+ 
 }
-  
+}
 

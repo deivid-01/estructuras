@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule, NgForm } from '@angular/forms';
 import { UsersService } from 'src/app/services/users.service';
+import { User } from 'src/app/models/user';
 
 @Component({
   selector: 'app-edit-page',
@@ -34,6 +35,7 @@ export class EditPageComponent implements OnInit {
   setUser() {
 
     const  user=JSON.parse(localStorage.getItem('user'));
+    console.log(user)
     user.name = this.fullName;
     user.nickname = this.usName;
     user.estatura = this.height;
@@ -41,8 +43,14 @@ export class EditPageComponent implements OnInit {
     user.email = this.email;
     user.genero = this.gender;
     user.actividadFisica = this.activity;
-
+    
     localStorage.setItem('user', JSON.stringify(user));
+   
+    //send to data base
+    this.usersService.putUser(user).subscribe(res=>{
+console.log(res);
+
+    })
   }
 
 }

@@ -19,9 +19,9 @@ router.get('/home',user.Home);
 
 router.get('/home/misdatos',isAuthenticated,user.GetData);
 
-router.put('/home/misdatos',isAuthenticated,user.EditData);
+router.put('/user',user.EditData);
 
-router.delete('/home/misdatos',isAuthenticated,user.Delete);
+router.delete('/user',isAuthenticated,user.Delete);
 module.exports = router;
 /*passport.authenticate('local',{
     failureRedirect:'api/users/signin',

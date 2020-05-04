@@ -48,9 +48,7 @@ userCtrl.SignIn  = async (req,res)=>{
     const userFound=   await User.findOne({email:req.body.email})
     
     if(!userFound){
-       res.json({
-           'message':'out'
-       })
+       res.json(null)
 
    }
    else {
@@ -91,17 +89,21 @@ userCtrl.GetData = (req,res)=>{
 }
 
 userCtrl.EditData= async(req,res) => {
-    const { id } =req.user.id;
+    console.log(req.body._id);
+    const { id } =req.body._id;
     const user = {
         nickname:req.body.nickname,
         email:req.body.email,
         password:req.body.password,
         name:req.body.name,
         estatura:req.body.estatura, 
+        peso:req.body.peso,
+        genero:req.body.genero,
+        actividadFisica:req.body.actividadFisica,
        
     }
-    console.log(req.user.id);
-    await User.findByIdAndUpdate(req.user.id,{$set:user},{new:true}) //search id and update with 'user' | 'new true' crea un nuevo usuario en caso de que no exista
+    console.log("Soy el id"+req.body._id);
+    await User.findByIdAndUpdate(req.body._id,user) //search id and update with 'user' | 'new true' crea un nuevo usuario en caso de que no exista
     res.json({'status':'user updated'})
 }
 userCtrl.Delete = async (req,res)=>{

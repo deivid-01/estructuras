@@ -35,6 +35,10 @@ export class UsersService {
   deleteUser(user: String){
     return this.http.delete(this.URL_API + '/${id}' );
   }
+  putUser(user: User){
+    console.log(user._id);
+    return this.http.put(this.URL_API + '/user',user);
+  }
 
-
+ 
 }
