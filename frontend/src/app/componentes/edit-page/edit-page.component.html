@@ -2,54 +2,54 @@
     <div class="row">
         <div class="col-md-6 mx-auto mt-5">
             <div class="card">
-                {{showInfo()}}
+                
                 <div class="card-content">
                     <h1 class="text-center">{{usName}}</h1>
                     <div class="form-group">
                         <h5>
                             Nombre completo:
-                            <small class="text-muted">{{fullName}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" required  [(ngModel)]="fullName">
                         </h5>
                     </div>
                     <div class="form-group">
                         <h5>
                             Nombre de usuario:
-                            <small class="text-muted">{{usName}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="usName">
                         </h5>
                     </div>
                     <div class="form-group">
                         <h5>
                             Estatura:
-                            <small class="text-muted">{{height}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="height">
                         </h5>
                     </div>
                     <div class="form-group">
                         <h5>
                             Peso:
-                            <small class="text-muted">{{weight}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="weight">
                         </h5>
                     </div>
                     <div class="form-group">
                         <h5>
                             Correo electrónico:
-                            <small class="text-muted">{{email}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="email">
                         </h5>
                     </div>
                     <div class="form-group">
                         <h5>
                             Genero:
-                            <small class="text-muted">{{gender}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="gender">
                         </h5>
                     </div>
                     <div class="form-group">
                         <h5>
                             Actividad Física:
-                            <small class="text-muted">{{activity}}</small>
+                            <input id= "name" type="text" name="name" class="form-control" #name="ngModel" [(ngModel)]="activity">
                         </h5>
                     </div>
-                    <div>
-                        <input type="submit" value="EDITAR" class="btn btn-primary btn-block btn-lg" routerLink="/edit">
-
+                    <div>                      
+                        <input type="submit" value="Guardar" class="btn btn-primary btn-block btn-lg" routerLink="/user" (click)="setUser()">
+                        <input type="submit" value="Cancelar" class="btn btn-primary btn-block btn-lg" routerLink="/user" >
                     </div>
                 </div>
             </div>

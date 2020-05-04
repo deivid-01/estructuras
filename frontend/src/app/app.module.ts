@@ -10,6 +10,7 @@ import { RegisterPageComponent} from './componentes/register-page/register-page.
 import { LoginPageComponent} from './componentes/login-page/login-page.component';
 import { HomePageComponent } from './componentes/home-page/home-page.component';
 import { UserPageComponent } from './componentes/user-page/user-page.component';
+import { EditPageComponent } from './componentes/edit-page/edit-page.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { UserPageComponent } from './componentes/user-page/user-page.component';
     LoginPageComponent,
     HomePageComponent,
     UserPageComponent,
+    EditPageComponent,
   ],
   imports: [
     BrowserModule,

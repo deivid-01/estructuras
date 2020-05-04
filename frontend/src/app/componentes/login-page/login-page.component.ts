@@ -48,7 +48,15 @@ export class LoginPageComponent implements OnInit {
       } else{
 
         
-        const user={'name':'juanito','age':13};
+        const user={
+          'nickname': 'Pipe77',
+          'email': 'felipe22@gmail.com',
+          'password': '22407',
+          'name': 'felipe',
+          'estatura': 1.82,
+           'peso': 72,
+          'genero': 'Masculino',
+          'actividadFisica': 'Regular'};
         localStorage.setItem('user',JSON.stringify(user));
         //this.usersService.postUserSignin(form.value)
           //.subscribe(res=>{              

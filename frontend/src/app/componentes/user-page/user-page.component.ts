@@ -31,14 +31,15 @@ export class UserPageComponent implements OnInit {
   }*/
 
   public showInfo(): void {
-    this.usName = 'Arlinson';
-    this.fullName = 'Arlinson Gomex';
-    this.userName = 'Zorrillo37';
-    this.height = 174;
-    this.weight = 82;
-    this.email = 'guantanamera@udea.edu.co';
-    this.gender = false;
-    this.activity = 'Regular';
+    const  user=JSON.parse(localStorage.getItem('user'));
+
+    this.usName = user.nickname;
+    this.fullName = user.name;
+    this.height = user.estatura;
+    this.weight = user.peso;
+    this.email = user.email;
+    this.gender = user.genero;
+    this.activity = user.actividadFisica;
   }
 
 }
